@@ -19,6 +19,7 @@ async function run(){
         await client.connect();
         // console.log('db canet');
         // console.log('db canet');
+        // console.log('db canet');
         const servicesCollecttion = client.db('assignment-12').collection('service');
         const bookingCollection = client.db('assignment-12').collection('bookings');
         const userCollection = client.db('assignment-12').collection('users');
