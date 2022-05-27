@@ -17,6 +17,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 async function run(){
     try{
         await client.connect();
+        // console.log('db canet');
         const servicesCollecttion = client.db('assignment-12').collection('service');
         const bookingCollection = client.db('assignment-12').collection('bookings');
         const userCollection = client.db('assignment-12').collection('users');
