@@ -7,7 +7,7 @@ const app = express()
 const port = process.env.PORT || 5000;
 const stripe = require('stripe')(process.env.STRIPE_SERCRT_KEY);
 
-app.use(cors());
+// app.use(cors());
 const corsConfig = {
   origin: 'https://assignment-12-7020e.web.app/',
   credentials: true,
@@ -79,6 +79,7 @@ async function run(){
 
         app.put('/user/:email', async (req, res) => {
             const email = req.params.email;
+            console.log(email);
             const user = req.body;
             const filter = { email: email };
             const options = { upsert: true };
@@ -87,6 +88,7 @@ async function run(){
             };
             const result = await userCollection.updateOne(filter, updateDoc, options);
             const token = jwt.sign({ email: email }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' })
+            console.log(token);
             res.send({ result, token });
           });
 
