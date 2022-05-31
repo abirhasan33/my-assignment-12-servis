@@ -45,7 +45,7 @@ async function run(){
           }
 
           app.get('/user', verifyJWT, async (req, res) => {
-            const users = await userCollection.find().toArray();
+            const users = await userCollection.find({}).toArray();
             res.send(users);
           });
 
@@ -144,7 +144,7 @@ async function run(){
           app.get('/available', async (req, res) => {
             const bookings = req.query.bookings;
       
-            const services = await servicesCollecttion.find().toArray();
+            const services = await servicesCollecttion.find({}).toArray();
       
             const query = { bookings: bookings };
             const booking = await bookingCollection.find(query).toArray();
