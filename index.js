@@ -169,7 +169,7 @@ async function run(){
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const quantit = req.body.quantity;
-            const option = {upserd: true}
+            const option = {upsert: true}
             const quantityMinus = {
                 $set: {
                     quantity: quantit
