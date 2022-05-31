@@ -9,7 +9,7 @@ const stripe = require('stripe')(process.env.STRIPE_SERCRT_KEY);
 
 // app.use(cors());
 const corsConfig = {
-  origin: 'https://assignment-12-7020e.web.app/',
+  origin: 'http://localhost:3003',
   credentials: true,
 }
 app.use(cors(corsConfig))
