@@ -8,12 +8,16 @@ const port = process.env.PORT || 5000;
 const stripe = require('stripe')(process.env.STRIPE_SERCRT_KEY);
 
 // app.use(cors());
-const corsConfig = {
-  origin: 'https://assignment-12-7020e.web.app',
-  credentials: true,
-}
-app.use(cors(corsConfig))
+// const corsConfig = {
+//   origin: 'https://assignment-12-7020e.web.app',
+//   credentials: true,
+// }
+app.use(cors({origin: 'https://assignment-12-7020e.web.app'}))
+
+// app.use(cors(corsConfig))
 app.use(express.json());
+
+
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.n5jjz.mongodb.net/?retryWrites=true&w=majority`;
